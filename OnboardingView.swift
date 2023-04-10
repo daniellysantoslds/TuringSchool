@@ -6,26 +6,50 @@
 //
 
 import SwiftUI
+//import PlaygroundSupport
+
+
+
 
 struct OnboardingView: View {
+    
+    @State private var showModal = false
     var body: some View {
+        
         VStack {
-
-            Button {
+            ZStack {
+               
+                Image("cenario1").resizable()
+                .scaledToFill()
+//                    .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
                 
-            } label: {
-                Text("PLAY")
+                Button("Play") {
+                    showModal = true
+                }
+                
             }
-
+            
+           
             
             
-        }  .background(Image("cenario1"))
-            .scaledToFill().ignoresSafeArea()
+            .edgesIgnoringSafeArea(.all)
+            .fullScreenCover(isPresented: $showModal) {
+                SwiftUIView()
+                    .transition(.move(edge: .top))
+                    .animation(.easeOut(duration: 0.5))
+            }
+            
+        }
     }
 }
+    
+ 
+    
+    struct OnboardingView_Previews: PreviewProvider {
+        static var previews: some View {
+            OnboardingView()
+        }
+    }
 
-struct OnboardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView()
-    }
-}
