@@ -36,7 +36,7 @@ struct OnboardingView: View {
             
             .edgesIgnoringSafeArea(.all)
             .fullScreenCover(isPresented: $showModal) {
-                SwiftUIView()
+                HeaderElemenentView()
                     .transition(.move(edge: .top))
                     .animation(.easeOut(duration: 0.5))
             }
