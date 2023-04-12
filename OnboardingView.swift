@@ -19,17 +19,22 @@ struct OnboardingView: View {
         VStack {
             ZStack {
                
-                Image("cenario1").resizable()
-                .scaledToFill()
-//                    .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea()
+//                Image("sprite_1").resizable()
+//                .scaledToFit()
+//                .aspectRatio(contentMode: .fill)
+//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                .ignoresSafeArea()
+                
+             
                 
                 Button("Play") {
                     showModal = true
                 }
+                .padding()
                 
             }
+            
+        
             
            
             
@@ -40,6 +45,8 @@ struct OnboardingView: View {
                     .transition(.move(edge: .top))
                     .animation(.easeOut(duration: 0.5))
             }
+        
+               
             
         }
     }
