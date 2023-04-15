@@ -27,9 +27,11 @@ struct OnboardingView: View {
                 .ignoresSafeArea()
                 
           
-                Button("Play") {
+            Button(action: {
                     showModal = true
-                }
+            }) {
+                Image("Frame 11")
+            }
             
             .edgesIgnoringSafeArea(.all)
             .fullScreenCover(isPresented: $showModal) {
