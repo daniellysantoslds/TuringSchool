@@ -4,7 +4,6 @@
 //
 //  Created by Danielly Santos Lopes da Silva on 12/04/23.
 //
-
 import SwiftUI
 
 
@@ -109,4 +108,3 @@ struct PopUpView: View {
     }
     
 }
-

@@ -16,47 +16,42 @@ struct OnboardingView: View {
     @State private var showModal = false
     var body: some View {
         
-        VStack {
-            ZStack {
-               
-//                Image("sprite_1").resizable()
-//                .scaledToFit()
-//                .aspectRatio(contentMode: .fill)
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                .ignoresSafeArea()
+        ZStack {
+            
+            Button("Play") {
+                showModal = true
+            }
+        
+            Image("floor")
+                .resizable()
+                .ignoresSafeArea()
                 
-             
-                
+          
                 Button("Play") {
                     showModal = true
                 }
-                .padding()
-                
-            }
-            
-        
-            
-           
-            
             
             .edgesIgnoringSafeArea(.all)
             .fullScreenCover(isPresented: $showModal) {
-               PopUpView()
+                PopUpView()
                     .transition(.move(edge: .top))
                     .animation(.easeOut(duration: 0.5))
             }
-        
-               
             
         }
+        .background(Image("sky").resizable().scaledToFill())
+        .edgesIgnoringSafeArea(.all)
+
+
     }
-}
+        
     
- 
+    
     
     struct OnboardingView_Previews: PreviewProvider {
         static var previews: some View {
             OnboardingView()
         }
     }
-
+    
+}
