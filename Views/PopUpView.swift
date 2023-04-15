@@ -64,7 +64,6 @@ struct PopUpView: View {
                         Image("sprite_0")
                             .resizable()
                             .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.46)
-                        // .cornerRadius(10)
                             .overlay(
                                 VStack(alignment: .center) {
                                     Text(flow[currentIndex].popUpDescription).lineLimit(7)
@@ -91,7 +90,7 @@ struct PopUpView: View {
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                         
                     }
-                    .position(x: geometry.size.width/2, y: geometry.size.height/2)
+                    .position(x: geometry.size.width/2, y: geometry.size.height/1.3)
                     
                 }
             }
