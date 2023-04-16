@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//import PlaygroundSupport
 
 
 
@@ -14,21 +13,29 @@ import SwiftUI
 struct OnboardingView: View {
     
     @State private var showModal = false
+    var fontR = UIFont()
+    var fontB = UIFont()
+    var fontM = UIFont()
+    
+    
     var body: some View {
+        
+        
         
         ZStack {
             
             Button("Play") {
                 showModal = true
             }
-        
+            
             Image("floor")
                 .resizable()
                 .ignoresSafeArea()
-                
-          
+            
+            
+            
             Button(action: {
-                    showModal = true
+                showModal = true
             }) {
                 Image("Frame 11")
             }
@@ -43,17 +50,40 @@ struct OnboardingView: View {
         }
         .background(Image("sky").resizable().scaledToFill())
         .edgesIgnoringSafeArea(.all)
-
-
-    }
         
-    
-    
-    
-    struct OnboardingView_Previews: PreviewProvider {
-        static var previews: some View {
-            OnboardingView()
-        }
+        
+        
+        
+        
     }
+    
+    
+    init() {
+        let cfURL = Bundle.main.url(forResource: "PixelOperator-Bold", withExtension: "ttf")! as CFURL
+        
+        CTFontManagerRegisterFontsForURL(cfURL, CTFontManagerScope.process, nil)
+        let cfURL2 = Bundle.main.url(forResource: "PixelOperator", withExtension: "ttf")! as CFURL
+        
+        CTFontManagerRegisterFontsForURL(cfURL2, CTFontManagerScope.process, nil)
+        let cfURL3 = Bundle.main.url(forResource: "PixelOperatorMono8", withExtension: "ttf")! as CFURL
+        CTFontManagerRegisterFontsForURL(cfURL3, CTFontManagerScope.process, nil)
+        
+        fontR = UIFont(name: "PixelOperator-Bold", size:  180)!
+        fontB = UIFont(name: "PixelOperator", size:  80)!
+        fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
+        
+        
+    }
+    
     
 }
+
+
+
+struct OnboardingView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingView()
+    }
+}
+
+
