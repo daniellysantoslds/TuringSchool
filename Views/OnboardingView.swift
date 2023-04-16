@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-
-
 struct OnboardingView: View {
     
     @State private var showModal = false
@@ -20,18 +17,22 @@ struct OnboardingView: View {
     
     var body: some View {
         
-        
-        
+        GeometryReader { geometry in
         ZStack {
-            
-            Button("Play") {
-                showModal = true
+            ZStack(alignment: .bottom) {
+                Image("floor")
+                    .resizable()
+                    .ignoresSafeArea()
+                
+                Image("sprite_0 44")
+                //.resizable()
+                    .alignmentGuide(.top) { d in d[.top] }
+                    .alignmentGuide(.leading) { d in d[.leading] }
+                    .offset(x: -geometry.size.width / 2.5 + 20, y: 169)
+                //.frame(maxHeight: .infinity, alignment: .bottom)
+                
+                
             }
-            
-            Image("floor")
-                .resizable()
-                .ignoresSafeArea()
-            
             
             
             Button(action: {
@@ -39,6 +40,8 @@ struct OnboardingView: View {
             }) {
                 Image("Frame 11")
             }
+            
+            //            Image("sprite_0 (2)").frame(width: 200, height: 200)
             
             .edgesIgnoringSafeArea(.all)
             .fullScreenCover(isPresented: $showModal) {
@@ -48,13 +51,11 @@ struct OnboardingView: View {
             }
             
         }
+    }
         .background(Image("sky").resizable().scaledToFill())
         .edgesIgnoringSafeArea(.all)
         
-        
-        
-        
-        
+   
     }
     
     
@@ -77,8 +78,6 @@ struct OnboardingView: View {
     
     
 }
-
-
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
