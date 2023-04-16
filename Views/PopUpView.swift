@@ -21,10 +21,10 @@ struct PopUpView: View {
     @State private var showNavigation = false
     
     @State private var flow: [ElementContentModel] = [
-        ElementContentModel(image: "el1", popUpDescription: "TAL"),
-        ElementContentModel(image: "el2", popUpDescription: "Outra descrição"),
-        ElementContentModel(image: "el3", popUpDescription: "Mais uma descrição"),
-        ElementContentModel(image: "el4", popUpDescription: "final"),
+        ElementContentModel(image: "sprite8", popUpDescription: "TAL"),
+        ElementContentModel(image: "sprite8", popUpDescription: "Outra descrição"),
+        ElementContentModel(image: "sprite8", popUpDescription: "Mais uma descrição"),
+        ElementContentModel(image: "sprite8", popUpDescription: "final"),
     ];
     
     // Controla nossa posicao no fluxo do jogo
@@ -40,16 +40,16 @@ struct PopUpView: View {
                 GeometryReader { geometryVStack in
                     
                     VStack {
-                        Spacer().frame(height: 100)
+                        Spacer().frame(height: 50)
                         Button(action: {
                             if (currentIndex == 0) {
                                 exibirPopup.toggle()
                             }
                             
                         }) {
-                            Image("popup").resizable().frame(width: 200, height: 200)
+                            Image(flow[currentIndex].image).resizable().frame(width: 300, height: 300)
                         }.opacity(currentIndex != 0 ? 0.5 : 1.0)
-                        Spacer().frame(height: 0)
+                        Spacer().frame(height: 50)
                         HStack {
                             ForEach(Array(flow.enumerated()), id: \.1.id) { index, element in
                                 
@@ -66,7 +66,7 @@ struct PopUpView: View {
                                 }) {
                                     
                                     if (isPastElement) {
-                                        Text(element.image).frame(width: 200, height: 200).background(Image("popup").resizable())
+                                        Text(element.image).frame(width: 400, height: 400).background(Image(flow[currentIndex].image).resizable())
                                     }
                                     
                                 }.opacity(isCurrentShowItem ? 1.0 : 0.5)
@@ -97,36 +97,37 @@ struct PopUpView: View {
                             .overlay(
                                 VStack {
                                     //                                        (flow[currentIndex].popUpDescription)
-                                    ScrollView {
+                                    //ScrollView {
                                         Text("none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiiinone of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiii")
                                             .font(Font(fontR28))
                                             .lineLimit(7)
                                             .foregroundColor(.black)
-                                    }
-                                    .frame(maxHeight: geometry.size.height * 0.200)
+                                    //}
+                                    //.frame(maxHeight: geometry.size.height * 0.200)
                                    
 
                                    
-//                                    HStack(spacing: 580) {
-//                                            Button("Sair") {
-//                                                exibirPopup.toggle()
-//                                            } .font(Font(fontM32))
-//                                            Button("Próxima") {
-//                                                // Se currentIndex for menor que o tamanho da lista
-//                                                if currentIndex < flow.count - 1 {
-//                                                    currentIndex += 1
-//                                                } else {
-//                                                    currentIndex = 0
-//                                                }
-//
-//                                                exibirPopup.toggle()
-//                                            } .font(Font(fontM32))
-//                                                .fullScreenCover(isPresented:  $showNavigation) {
-//                                                    OnboardingView()
-//                                                }
-//                                        }
-                                    //.padding(.horizontal, 60)
-                                   // .padding(.top, 40)
+                                    HStack(spacing: 400) {
+                                            Button("Sair") {
+                                                exibirPopup.toggle()
+                                            } .font(Font(fontM32))
+                                            Button("Próxima") {
+                                                // Se currentIndex for menor que o tamanho da lista
+                                                if currentIndex < flow.count - 1 {
+                                                    currentIndex += 1
+                                                } else {
+                                                    currentIndex = 0
+                                                }
+
+                                                exibirPopup.toggle()
+                                            } .font(Font(fontM32))
+                                                .fullScreenCover(isPresented:  $showNavigation) {
+                                                    OnboardingView()
+                                                }
+                                        }
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                                    .padding(.horizontal, 60)
+//                                    .padding(.top, 40)
                                     
                                     
                                     
