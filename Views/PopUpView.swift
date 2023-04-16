@@ -21,10 +21,10 @@ struct PopUpView: View {
     @State private var showNavigation = false
     
     @State private var flow: [ElementContentModel] = [
-        ElementContentModel(image: "sprite8", popUpDescription: "TAL"),
-        ElementContentModel(image: "sprite8", popUpDescription: "Outra descrição"),
-        ElementContentModel(image: "sprite8", popUpDescription: "Mais uma descrição"),
-        ElementContentModel(image: "sprite8", popUpDescription: "final"),
+        ElementContentModel(image: "header", popUpDescription: "TAL"),
+        ElementContentModel(image: "header", popUpDescription: "Outra descrição"),
+        ElementContentModel(image: "header", popUpDescription: "Mais uma descrição"),
+        ElementContentModel(image: "header", popUpDescription: "final"),
     ];
     
     // Controla nossa posicao no fluxo do jogo
