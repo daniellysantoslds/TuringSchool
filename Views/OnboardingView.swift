@@ -31,7 +31,7 @@ struct OnboardingView: View {
                     .offset(x: -geometry.size.width / 2.60 + 20, y: 169)
                 //.frame(maxHeight: .infinity, alignment: .bottom)
                 
-                Image("turinhoo").frame(width: 200, height: 200)
+                Image("turin").frame(width: 200, height: 200)
         .alignmentGuide(.top) { d in d[.top] }
         .alignmentGuide(.trailing) { d in d[.trailing] }
         .offset(x: geometry.size.width / 2.60,  y:-95)
@@ -39,11 +39,10 @@ struct OnboardingView: View {
                 
             }
             
-            
             Button(action: {
                 showModal = true
             }) {
-                Image("Frame 11")
+                Image("play-button")
             }
             .frame(width: 100, height: 100)
             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)

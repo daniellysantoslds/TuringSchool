@@ -27,72 +27,80 @@ struct PopUpView: View {
     @State private var currentIndex = 0
     
     var body: some View {
-        ZStack {
-            VStack {
-                
-                Button(flow[currentIndex].image) {
-                    exibirPopup.toggle()
+        GeometryReader { geometry in
+            ZStack {
+                VStack {
                     
-                }
-                
-                
-                HStack {
-                    ForEach(Array(flow.enumerated()), id: \.1.id) { index, element in
-                        Button(action: {
-                            
-                        }) {
-                            
-                            var isCurrentIndex = index == currentIndex;
-                            var isPastElement = index < ((currentIndex + 1) - 1);
-                            var isCurrentIndexDifferentZero = currentIndex != 0;
-                            
-                            
-                            
-                            if ((isCurrentIndex || isPastElement) && isCurrentIndexDifferentZero) {
-                                Text(element.image)
+                    Button(flow[currentIndex].image) {
+                        exibirPopup.toggle()
+                        
+
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .position(x: geometry.size.width/2, y: geometry.size.height/3.5)
+                    
+                    
+
+                    
+                    HStack {
+                        ForEach(Array(flow.enumerated()), id: \.1.id) { index, element in
+                            Button(action: {
+                                
+                            }) {
+                                
+                                var isCurrentIndex = index == currentIndex;
+                                var isPastElement = index < ((currentIndex + 1) - 1);
+                                var isCurrentIndexDifferentZero = currentIndex != 0;
+                                
+                                
+                                if ((isCurrentIndex || isPastElement) && isCurrentIndexDifferentZero) {
+                                    Text(element.image)
+                                }
+                                
                             }
-                            
                         }
                     }
                 }
-            }
-            
-            if exibirPopup {
-                GeometryReader { geometry in
-                    VStack(alignment: .center) {
-                        Image("sprite_0")
-                            .resizable()
-                            .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.46)
-                            .overlay(
-                                VStack(alignment: .center) {
-                                    Text(flow[currentIndex].popUpDescription).lineLimit(7)
-                                        .foregroundColor(.black)
-                                    HStack(alignment: .center) {
-                                        Button("Sair") {
-                                            exibirPopup.toggle()
-                                        }
-                                        Button("Próxima") {
-                                            if currentIndex < flow.count - 1 {
-                                                currentIndex += 1
-                                            } else {
-                                                currentIndex = 0
+                
+                if exibirPopup {
+                    GeometryReader { geometry in
+                        VStack(alignment: .center) {
+                            Image("sprite_0")
+                                .resizable()
+                                .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.46)
+                                .overlay(
+                                    VStack(alignment: .center) {
+                                        Text(flow[currentIndex].popUpDescription).lineLimit(7)
+                                            .foregroundColor(.black)
+                                        HStack(alignment: .center) {
+                                            Button("Sair") {
+                                                exibirPopup.toggle()
                                             }
-                                            
-                                            exibirPopup.toggle()
-                                        }
-                                        .fullScreenCover(isPresented:  $showNavigation) {
-                                            OnboardingView()
+                                            Button("Próxima") {
+                                                if currentIndex < flow.count - 1 {
+                                                    currentIndex += 1
+                                                } else {
+                                                    currentIndex = 0
+                                                }
+                                                
+                                                exibirPopup.toggle()
+                                            }
+                                            .fullScreenCover(isPresented:  $showNavigation) {
+                                                OnboardingView()
+                                            }
                                         }
                                     }
-                                }
-                            )
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                )
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            
+                        }
+                        .position(x: geometry.size.width/2, y: geometry.size.height/1.3)
                         
                     }
-                    .position(x: geometry.size.width/2, y: geometry.size.height/1.3)
-                    
                 }
             }
+        }
+        .background(Image("parede").resizable().scaledToFill())
         }
     }
     
@@ -100,11 +108,10 @@ struct PopUpView: View {
     
     
     
-    
-    struct alertaaview_Previews: PreviewProvider {
+    struct PopUpView_Previews: PreviewProvider {
         static var previews: some View {
             PopUpView()
         }
     }
     
-}
+
