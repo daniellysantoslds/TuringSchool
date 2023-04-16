@@ -24,12 +24,17 @@ struct OnboardingView: View {
                     .resizable()
                     .ignoresSafeArea()
                 
-                Image("sprite_0 44")
+                Image("school")
                 //.resizable()
                     .alignmentGuide(.top) { d in d[.top] }
                     .alignmentGuide(.leading) { d in d[.leading] }
-                    .offset(x: -geometry.size.width / 2.5 + 20, y: 169)
+                    .offset(x: -geometry.size.width / 2.60 + 20, y: 169)
                 //.frame(maxHeight: .infinity, alignment: .bottom)
+                
+                Image("turinhoo").frame(width: 200, height: 200)
+        .alignmentGuide(.top) { d in d[.top] }
+        .alignmentGuide(.trailing) { d in d[.trailing] }
+        .offset(x: geometry.size.width / 2.60,  y:-95)
                 
                 
             }
@@ -40,8 +45,13 @@ struct OnboardingView: View {
             }) {
                 Image("Frame 11")
             }
+            .frame(width: 100, height: 100)
+            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             
-            //            Image("sprite_0 (2)").frame(width: 200, height: 200)
+                 
+
+            
+            
             
             .edgesIgnoringSafeArea(.all)
             .fullScreenCover(isPresented: $showModal) {
