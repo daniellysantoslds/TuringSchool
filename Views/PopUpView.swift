@@ -21,16 +21,16 @@ struct PopUpView: View {
     @State private var showNavigation = false
     
     @State private var flow: [ElementContentModel] = [
-        ElementContentModel(image: "header", popUpDescription: "TAL"),
-        ElementContentModel(image: "header", popUpDescription: "Outra descrição"),
-        ElementContentModel(image: "header", popUpDescription: "Mais uma descrição"),
-        ElementContentModel(image: "header", popUpDescription: "final"),
+        ElementContentModel(image: "beginning-of-tape", popUpDescription: "TAL"),
+        ElementContentModel(image: "Prohibited", popUpDescription: "Outra descrição"),
+        ElementContentModel(image: "white", popUpDescription: "Mais uma descrição"),
+        ElementContentModel(image: "beginning-of-tape", popUpDescription: "final"),
     ];
     
     // Controla nossa posicao no fluxo do jogo
     // 0 -> Estado inicial apresentacao apenas do cabecote
     // 1 -> Primeira parte da fita
-    @State private var currentIndex = 0;
+    @State private var flowCurrentIndex = 0;
     
     var body: some View {
         GeometryReader { geometry in
@@ -40,23 +40,21 @@ struct PopUpView: View {
                 GeometryReader { geometryVStack in
                     
                     VStack {
-                        Spacer().frame(height: 50)
+                        Spacer().frame(height: 100)
                         Button(action: {
-                            if (currentIndex == 0) {
+                            if (flowCurrentIndex == 0) {
                                 exibirPopup.toggle()
                             }
                             
                         }) {
-                            Image(flow[currentIndex].image).resizable().frame(width: 300, height: 300)
-                        }.opacity(currentIndex != 0 ? 0.5 : 1.0)
+                            Image("header").resizable().frame(width: 250, height: 250).background(Color.red)
+                        }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
                         Spacer().frame(height: 50)
                         HStack {
                             ForEach(Array(flow.enumerated()), id: \.1.id) { index, element in
                                 
-                                
-                                let isPastElement = index < (currentIndex);
-                                let isCurrentShowItem = index == currentIndex - 1;
-                                
+                                let isPastElement = index < (flowCurrentIndex);
+                                let isCurrentShowItem = index == flowCurrentIndex - 1;
                                 
                                 Button(action: {
                                     if (isPastElement && isCurrentShowItem) {
@@ -66,10 +64,10 @@ struct PopUpView: View {
                                 }) {
                                     
                                     if (isPastElement) {
-                                        Text(element.image).frame(width: 400, height: 400).background(Image(flow[currentIndex].image).resizable())
+                                        Image(flow[index].image).resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 200).background(Color.blue)
                                     }
                                     
-                                }.opacity(isCurrentShowItem ? 1.0 : 0.5)
+                                }.opacity(isCurrentShowItem ? 1.0 : 0.5).background(Color.blue)
                             }
                             
                         }
@@ -98,36 +96,36 @@ struct PopUpView: View {
                                 VStack {
                                     //                                        (flow[currentIndex].popUpDescription)
                                     //ScrollView {
-                                        Text("none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiiinone of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiii")
-                                            .font(Font(fontR28))
-                                            .lineLimit(7)
-                                            .foregroundColor(.black)
+                                    Text("none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiiinone of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiii")
+                                        .font(Font(fontR28))
+                                        .lineLimit(7)
+                                        .foregroundColor(.black)
                                     //}
                                     //.frame(maxHeight: geometry.size.height * 0.200)
-                                   
-
-                                   
+                                    
+                                    
+                                    
                                     HStack(spacing: 400) {
-                                            Button("Sair") {
-                                                exibirPopup.toggle()
-                                            } .font(Font(fontM32))
-                                            Button("Próxima") {
-                                                // Se currentIndex for menor que o tamanho da lista
-                                                if currentIndex < flow.count - 1 {
-                                                    currentIndex += 1
-                                                } else {
-                                                    currentIndex = 0
-                                                }
-
-                                                exibirPopup.toggle()
-                                            } .font(Font(fontM32))
-                                                .fullScreenCover(isPresented:  $showNavigation) {
-                                                    OnboardingView()
-                                                }
-                                        }
+                                        Button("Sair") {
+                                            exibirPopup.toggle()
+                                        } .font(Font(fontM32))
+                                        Button("Próxima") {
+                                            // Se currentIndex for menor que o tamanho da lista
+                                            if flowCurrentIndex < flow.count - 1 {
+                                                flowCurrentIndex += 1
+                                            } else {
+                                                flowCurrentIndex = 0
+                                            }
+                                            
+                                            exibirPopup.toggle()
+                                        } .font(Font(fontM32))
+                                            .fullScreenCover(isPresented:  $showNavigation) {
+                                                OnboardingView()
+                                            }
+                                    }
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                                    .padding(.horizontal, 60)
-//                                    .padding(.top, 40)
+                                    //                                    .padding(.horizontal, 60)
+                                    //                                    .padding(.top, 40)
                                     
                                     
                                     
