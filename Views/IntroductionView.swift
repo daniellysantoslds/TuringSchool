@@ -17,11 +17,15 @@ struct IntroductionView: View {
     
     
     var body: some View {
-        VStack {
-            Text("Hello, World!")
-        }
-        .background(Image("wall").resizable().scaledToFill())
-       
+        GeometryReader { geometry in
+            ZStack {
+                VStack {
+                    Text("Hello, World!")
+                }
+                
+            }
+        } .background(Image("wall").resizable().scaledToFill())
+        
     }
     
     
@@ -45,11 +49,15 @@ struct IntroductionView: View {
         
         
     }
-}
-
-
-struct IntroductionView_Previews: PreviewProvider {
-    static var previews: some View {
-        IntroductionView()
+    
+    
+    
+    
+    
+    struct IntroductionView_Previews: PreviewProvider {
+        static var previews: some View {
+            IntroductionView()
+        }
     }
+    
 }
