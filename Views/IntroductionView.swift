@@ -20,6 +20,8 @@ struct IntroductionView: View {
     
     @State private var typedText = ""
     
+    @State private var showButton = false
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
@@ -27,19 +29,38 @@ struct IntroductionView: View {
                     
                     VStack {
                         Text(typedText).font(Font(fontMoBo))
-                            .frame(width: 900, height: 900)
+                            .lineSpacing(5)
+                            .frame(width: 800, height: 430, alignment: .leading)
                             .foregroundColor(Color.white) .animation(Animation.linear(duration: 0.04).repeatCount(1, autoreverses: false).delay(0.5))
                         
-                       
+                        
+                        if showButton {
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("next")
+                                    .foregroundColor(.red)
+                            }).offset(y: geometry.size.width / 100 )
+                        }
+                        
+                        
+                        
                         
                     }.onAppear {
                         for index in textToType.indices {
                             DispatchQueue.main.asyncAfter(deadline: .now() + Double(textToType.distance(from: textToType.startIndex, to: index)) * 0.05) {
                                 typedText.append(textToType[index])
+                                
+                                if index == textToType.index(before: textToType.endIndex) {
+                                    showButton = true
+                                }
+          
+                                
                             }
                         }
                     }
-        
+                    
+                    
                     .background(
                         Image("quadro")
                             .resizable()
@@ -50,14 +71,14 @@ struct IntroductionView: View {
                     
                     Image("turin").resizable()
                         .frame(width: 180, height: 180)
-            .alignmentGuide(.top) { d in d[.top] }
-            .alignmentGuide(.leading) { d in d[.leading] }
-            .offset(x: geometry.size.width / 20,  y: geometry.size.height - 184)
+                        .alignmentGuide(.top) { d in d[.top] }
+                        .alignmentGuide(.leading) { d in d[.leading] }
+                        .offset(x: geometry.size.width / 35,  y: geometry.size.height - 195)
                     
                 }
             }
             
-     
+            
         } .background(Image("wall").resizable().scaledToFill())
         
     }
@@ -86,7 +107,7 @@ struct IntroductionView: View {
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontR28 = UIFont(name: "PixelOperator", size: 28)!
         fontM32 = UIFont(name: "PixelOperatorMono8", size: 18)!
-        fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 22)!
+        fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 30)!
         
         
     }
