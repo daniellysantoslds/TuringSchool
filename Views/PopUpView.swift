@@ -140,7 +140,7 @@ struct PopUpView: View {
                 }
             }
         }
-        .background(Image("parede").resizable().scaledToFill())
+        .background(Image("wall").resizable().scaledToFill())
     }
     
     init() {
