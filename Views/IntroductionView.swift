@@ -18,9 +18,21 @@ struct IntroductionView: View {
     
     let textToType = "Hey guys! My name is Alan Turing and I will be your new math teacher. In addition to being a mathematician, I am a computer scientist, cryptanalyst, philosopher and biologist, born in London."
     
+    
+    @State private var currentTextIndex = 0
+    
+    var currentText: String {
+        texts[currentTextIndex]
+    }
+    
     @State private var typedText = ""
     
     @State private var showButton = false
+    
+    @State private var isNextViewPresented = false
+    
+    @State private var currenttText = "primeiro texto"
+    private let texts = ["Hey guys! My name is Alan Turing and I will be your new math teacher. In addition to being a mathematician, I am a computer scientist, cryptanalyst, philosopher and biologist, born in London", "Hey guys! My name is Alan Turing and I will be your new math teacher. In addition to being a ", "Hey guys! l be your new math teacher. In addition to being a mathematician, I am a computer scientist, cryptanalyst, philosopher and biologist, born in London"]
     
     var body: some View {
         GeometryReader { geometry in
@@ -28,19 +40,28 @@ struct IntroductionView: View {
                 GeometryReader { geometryVStack in
                     
                     VStack {
-                        Text(typedText).font(Font(fontMoBo))
+                        Text(currentText).font(Font(fontMoBo))
                             .lineSpacing(5)
                             .frame(width: 800, height: 430, alignment: .leading)
-                            .foregroundColor(Color.white) .animation(Animation.linear(duration: 0.04).repeatCount(1, autoreverses: false).delay(0.5))
+                            .foregroundColor(Color.white) .animation(Animation.linear(duration: 0.04).repeatCount(1, autoreverses: false).delay(0.5)) 
                         
                         
                         if showButton {
                             Button(action: {
+                                if currentTextIndex < texts.count - 1 {
+                                        currentTextIndex += 1
+                                } else {
+                                    isNextViewPresented = true
+                                }
                                 
                             }, label: {
-                                Text("next")
+                                Text(currentTextIndex < texts.count - 1 ? "next" : "vamo estudar")
                                     .foregroundColor(.red)
-                            }).offset(y: geometry.size.width / 100 )
+                            })
+                            .offset(y: geometry.size.width / 100 )
+                            sheet(isPresented: $isNextViewPresented) {
+                                PopUpView()
+                            }
                         }
                         
                         
