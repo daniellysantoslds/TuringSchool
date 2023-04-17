@@ -21,10 +21,10 @@ struct PopUpView: View {
     @State private var showNavigation = false
     
     @State private var flow: [ElementContentModel] = [
-        ElementContentModel(image: "beginning-of-tape", popUpDescription: "TAL"),
-        ElementContentModel(image: "Prohibited", popUpDescription: "Outra descrição"),
-        ElementContentModel(image: "white", popUpDescription: "Mais uma descrição"),
-        ElementContentModel(image: "beginning-of-tape", popUpDescription: "final"),
+        ElementContentModel(image: "beginning-of-tape", popUpDescription: "Now we are on the second item, represented by the lowercase delta symbol (δ), this element indicates the initial state of the machine, which means that everything will start from that point. When the machine is activated, this is where the reading head is positioned. From then on, the machine starts executing the instructions present in its transition table to process the data stored on the tape."),
+        ElementContentModel(image: "Prohibited", popUpDescription: "In the third item, it is important to highlight that every program has a data input, which can be a sequence of characters, such as letters, numbers, codes or programs, which will be processed and calculated. This entry will be written to the tape itself by the user who wants to perform the computation. These input items are processed by the read head along the tape, and how the machine processes them depends on the rules contained in the transition table."),
+        ElementContentModel(image: "white", popUpDescription: "The fourth item and the last one we will cover is the white symbol, represented by the beta symbol. This symbol is used to indicate an empty space on the tape where no information is stored. It is used to signal that there is no more input information to be read and therefore the computation must be terminated."),
+        ElementContentModel(image: "beginning-of-tape", popUpDescription: "Now we are on the second item, represented by the lowercase delta symbol (δ), this element indicates the initial state of the machine, which means that everything will start from that point. When the machine is activated, this is where the reading head is positioned. From then on, the machine starts executing the instructions present in its transition table to process the data stored on the tape."),
     ];
     
     // Controla nossa posicao no fluxo do jogo
@@ -96,7 +96,7 @@ struct PopUpView: View {
                                 VStack {
                                     //                                        (flow[currentIndex].popUpDescription)
                                     //ScrollView {
-                                    Text("none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiiinone of the content here belongs to me besides the editing :) all rights go to doja and her directors/producer,none of the content here belongs to me besides the editing :) all rights go to doja and her directors/producerss oiiiiii eaiiiiii")
+                                    Text("In the first item, we have the control unit, which is also called the tape reading head. It is important to note that the tape is infinite. This unit is responsible for reading and writing symbols on the tape, as well as moving left or right. We can imagine that the read head works as if it were a person looking at each square on the tape, moving their attention left or right.")
                                         .font(Font(fontR28))
                                         .lineLimit(7)
                                         .foregroundColor(.black)
