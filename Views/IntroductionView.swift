@@ -18,12 +18,31 @@ struct IntroductionView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                VStack {
-                    Text("Hello, World!")
+            ZStack(alignment: .bottom) {
+                GeometryReader { geometryVStack in
+                    
+                    VStack {
+                        Text("Hello, World!")
+                        
+                       
+                        
+                    }.background(
+                        Image("quadro")
+                            .resizable()
+                            .frame(width:geometryVStack.size.width, height:  geometryVStack.size.height )
+                        
+                    )
+                    .frame(maxWidth: geometry.size.width * 0.95, maxHeight:  geometry.size.height * 0.90).position(x: geometry.size.width/2, y: geometry.size.height/2)
+                    
+                    Image("turin").frame(width: 200, height: 200)
+            .alignmentGuide(.top) { d in d[.top] }
+            .alignmentGuide(.leading) { d in d[.leading] }
+            .offset(x: geometry.size.width / 20,  y: geometry.size.height - 284)
+                    
                 }
-                
             }
+            
+     
         } .background(Image("wall").resizable().scaledToFill())
         
     }

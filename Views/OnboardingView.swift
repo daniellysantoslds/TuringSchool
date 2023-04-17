@@ -29,12 +29,11 @@ struct OnboardingView: View {
                     .alignmentGuide(.top) { d in d[.top] }
                     .alignmentGuide(.leading) { d in d[.leading] }
                     .offset(x: -geometry.size.width / 2.60 + 20, y: 169)
-                //.frame(maxHeight: .infinity, alignment: .bottom)
                 
                 Image("turin").frame(width: 200, height: 200)
         .alignmentGuide(.top) { d in d[.top] }
         .alignmentGuide(.trailing) { d in d[.trailing] }
-        .offset(x: geometry.size.width / 2.60,  y:-95)
+        .offset(x: geometry.size.width / 2.60,  y: -95)
                 
                 
             }
