@@ -15,7 +15,7 @@ struct OnboardingThreeView: View {
     var fontM32 = UIFont()
     var fontMoBo = UIFont()
     
-    let textToType = "In today's class, I'd like to introduce you to one of my most important inventions: the Turing Machine - yes, it bears my last name! This is a theoretical device also known as a universal machine."
+    let textToType = "As our lesson is brief, I would like to share four important points that make up the machine: the head, the initial state, the input data and the white symbol. That's a lot of detail, but we'll try to cover everything before the ring tone! Ready?"
     
     @State private var typedText = ""
     
