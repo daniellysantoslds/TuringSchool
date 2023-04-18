@@ -23,7 +23,7 @@ struct OnboardingTwoView: View {
     @State var showButton = false
     
     @State private var showNavigation = false
-
+    
     
     var body: some View {
         GeometryReader { geometry in

@@ -165,10 +165,6 @@ struct PopUpView: View {
     }
 }
 
-
-
-
-
 struct PopUpView_Previews: PreviewProvider {
     static var previews: some View {
         PopUpView()

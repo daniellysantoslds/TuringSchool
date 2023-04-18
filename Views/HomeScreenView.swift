@@ -18,52 +18,52 @@ struct HomeScreenView: View {
     var body: some View {
         
         GeometryReader { geometry in
-        ZStack {
-            ZStack(alignment: .bottom) {
-                Image("floor")
-                    .resizable()
-                    .ignoresSafeArea()
+            ZStack {
+                ZStack(alignment: .bottom) {
+                    Image("floor")
+                        .resizable()
+                        .ignoresSafeArea()
+                    
+                    Image("school")
+                    //.resizable()
+                        .alignmentGuide(.top) { d in d[.top] }
+                        .alignmentGuide(.leading) { d in d[.leading] }
+                        .offset(x: -geometry.size.width / 2.60 + 20, y: 169)
+                    
+                    Image("turin").frame(width: 200, height: 200)
+                        .alignmentGuide(.top) { d in d[.top] }
+                        .alignmentGuide(.trailing) { d in d[.trailing] }
+                        .offset(x: geometry.size.width / 2.60,  y: -95)
+                    
+                    
+                }
                 
-                Image("school")
-                //.resizable()
-                    .alignmentGuide(.top) { d in d[.top] }
-                    .alignmentGuide(.leading) { d in d[.leading] }
-                    .offset(x: -geometry.size.width / 2.60 + 20, y: 169)
+                Button(action: {
+                    showModal = true
+                }) {
+                    Image("play-button")
+                }
+                .frame(width: 100, height: 100)
+                .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                 
-                Image("turin").frame(width: 200, height: 200)
-        .alignmentGuide(.top) { d in d[.top] }
-        .alignmentGuide(.trailing) { d in d[.trailing] }
-        .offset(x: geometry.size.width / 2.60,  y: -95)
                 
+                
+                
+                
+                
+                .edgesIgnoringSafeArea(.all)
+                .fullScreenCover(isPresented: $showModal) {
+                    OnboardingOneView()
+                        .transition(.move(edge: .top))
+                        .animation(.easeOut(duration: 0.5))
+                }
                 
             }
-            
-            Button(action: {
-                showModal = true
-            }) {
-                Image("play-button")
-            }
-            .frame(width: 100, height: 100)
-            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-            
-                 
-
-            
-            
-            
-            .edgesIgnoringSafeArea(.all)
-            .fullScreenCover(isPresented: $showModal) {
-                OnboardingOneView()
-                    .transition(.move(edge: .top))
-                    .animation(.easeOut(duration: 0.5))
-            }
-            
         }
-    }
         .background(Image("sky").resizable().scaledToFill())
         .edgesIgnoringSafeArea(.all)
         
-   
+        
     }
     
     
