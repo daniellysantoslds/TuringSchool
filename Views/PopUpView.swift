@@ -120,7 +120,7 @@ struct PopUpView: View {
                                             exibirPopup.toggle()
                                         } .font(Font(fontM32))
                                             .fullScreenCover(isPresented:  $showNavigation) {
-                                                OnboardingView()
+                                                HomeScreen()
                                             }
                                     }
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
