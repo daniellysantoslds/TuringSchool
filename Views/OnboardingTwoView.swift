@@ -22,6 +22,9 @@ struct OnboardingTwoView: View {
     
     @State var showButton = false
     
+    @State private var showNavigation = false
+
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
@@ -35,10 +38,16 @@ struct OnboardingTwoView: View {
                         
                         if showButton {
                             Button(action: {
-                            }, label: {
+                                showNavigation.toggle()
+                                
+                            }) {
                                 Text("next")
                                     .foregroundColor(.red)
-                            }).offset(y: geometry.size.width / 100 )
+                            }
+                            .offset(y: geometry.size.width / 100 )
+                            .fullScreenCover(isPresented: $showNavigation, content: {
+                                OnboardingThreeView().animation(nil)
+                            })
                         }
                         
                     }.onAppear {
