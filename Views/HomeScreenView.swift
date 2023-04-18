@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeScreen: View {
+struct HomeScreenView: View {
     
     @State private var showModal = false
     var fontR = UIFont()
@@ -89,7 +89,7 @@ struct HomeScreen: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen()
+        HomeScreenView()
     }
 }
 
