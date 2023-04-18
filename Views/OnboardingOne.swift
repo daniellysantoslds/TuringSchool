@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct IntroductionView: View {
+struct OnboardingOne: View {
     
     var fontR = UIFont()
     var fontB = UIFont()
@@ -102,7 +102,7 @@ struct IntroductionView: View {
                 
                 struct IntroductionView_Previews: PreviewProvider {
                     static var previews: some View {
-                        IntroductionView()
+                        OnboardingOne()
                     }
                 }
                 

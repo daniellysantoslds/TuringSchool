@@ -53,7 +53,7 @@ struct OnboardingView: View {
             
             .edgesIgnoringSafeArea(.all)
             .fullScreenCover(isPresented: $showModal) {
-                IntroductionView()
+                OnboardingOne()
                     .transition(.move(edge: .top))
                     .animation(.easeOut(duration: 0.5))
             }
