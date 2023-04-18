@@ -45,7 +45,7 @@ struct OnboardingThreeView: View {
                             }
                             .offset(y: geometry.size.width / 100 )
                             .fullScreenCover(isPresented: $showNavigation, content: {
-                                OnboardingTwoView().animation(nil)
+                                PopUpView().animation(nil)
                             })
                         }
                         
