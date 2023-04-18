@@ -46,7 +46,7 @@ struct PopUpView: View {
                             }
                             
                         }) {
-                            Image("header").resizable().frame(width: 250, height: 250)                        }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
+                            Image("header").resizable().frame(width: 200, height: 200)                        }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
                         Spacer().frame(height: 50)
                         HStack {
                             ForEach(Array(flow.enumerated()), id: \.1.id) { index, element in
@@ -85,7 +85,7 @@ struct PopUpView: View {
                 if exibirPopup {
                     GeometryReader { geometry in
                         Color.white
-                            .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.3)
+                            .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.38)
                             .overlay(
                                 VStack {
                                     Text("In the first item, we have the control unit, which is also called the tape reading head. It is important to note that the tape is infinite. This unit is responsible for reading and writing symbols on the tape, as well as moving left or right. We can imagine that the read head works as if it were a person looking at each square on the tape, moving their attention left or right.")
