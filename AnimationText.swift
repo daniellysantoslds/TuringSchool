@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnboardingTwo: View {
+struct AnimationText: View {
     let textToType = "Hey guys! My name is Alan Turing and I will be your new math teacher. In addition to being a mathematician, I am a computer scientist, cryptanalyst, philosopher and biologist, born in London.Hey guys! My name is Alan Turing and I will be your new math teacher. In addition to being a mathematician, I am a computer scientist, cryptanalyst, philosopher and biologist, born in London"
 
         @State private var typedText = ""
@@ -36,6 +36,6 @@ struct OnboardingTwo: View {
 
 struct OnboardingThreeView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingTwo()
+        AnimationText()
     }
 }

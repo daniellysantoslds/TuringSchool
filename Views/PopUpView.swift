@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PopUpView: View {
     
-    
     var fontR = UIFont()
     var fontB = UIFont()
     var fontM = UIFont()
@@ -47,8 +46,7 @@ struct PopUpView: View {
                             }
                             
                         }) {
-                            Image("header").resizable().frame(width: 250, height: 250).background(Color.red)
-                        }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
+                            Image("header").resizable().frame(width: 250, height: 250)                        }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
                         Spacer().frame(height: 50)
                         HStack {
                             ForEach(Array(flow.enumerated()), id: \.1.id) { index, element in
@@ -64,10 +62,10 @@ struct PopUpView: View {
                                 }) {
                                     
                                     if (isPastElement) {
-                                        Image(flow[index].image).resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 200).background(Color.blue)
+                                        Image(flow[index].image).resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 200)
                                     }
                                     
-                                }.opacity(isCurrentShowItem ? 1.0 : 0.5).background(Color.blue)
+                                }.opacity(isCurrentShowItem ? 1.0 : 0.5)
                             }
                             
                         }
@@ -85,25 +83,18 @@ struct PopUpView: View {
                 }
                 
                 if exibirPopup {
-                    
-                    
                     GeometryReader { geometry in
-                        
-                        Image("popup")
-                            .resizable()
-                            .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.8)
+                        Color.white
+                            .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.3)
                             .overlay(
                                 VStack {
-                                    //                                        (flow[currentIndex].popUpDescription)
-                                    //ScrollView {
                                     Text("In the first item, we have the control unit, which is also called the tape reading head. It is important to note that the tape is infinite. This unit is responsible for reading and writing symbols on the tape, as well as moving left or right. We can imagine that the read head works as if it were a person looking at each square on the tape, moving their attention left or right.")
                                         .font(Font(fontR28))
-                                        .lineLimit(7)
+                                        //.lineLimit(7)
                                         .foregroundColor(.black)
                                     //}
                                     //.frame(maxHeight: geometry.size.height * 0.200)
-                                    
-                                    
+                        
                                     
                                     HStack(spacing: 400) {
                                         Button("Sair") {
@@ -123,16 +114,16 @@ struct PopUpView: View {
                                                 HomeScreenView()
                                             }
                                     }
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    //.frame(maxWidth: .infinity, maxHeight: .infinity)
                                     //                                    .padding(.horizontal, 60)
                                     //                                    .padding(.top, 40)
                                     
                                     
                                     
                                     
-                                }.frame(width: (geometry.size.width * 0.8) * 0.88, height:(geometry.size.height * 0.60) * 0.9)
+                                }//.frame(width: (geometry.size.width * 0.8) * 0.88, height:(geometry.size.height * 0.60) * 0.9)
                             )
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            //.frame(maxWidth: .infinity, maxHeight: .infinity)
                         
                             .position(x: geometry.size.width/2, y: geometry.size.height/1.5)
                         
