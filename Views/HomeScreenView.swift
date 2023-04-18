@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     
     @State private var showModal = false
+    
     var fontR = UIFont()
     var fontB = UIFont()
     var fontM = UIFont()
