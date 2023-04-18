@@ -73,7 +73,7 @@ struct PopUpView: View {
                         Spacer()
                     }
                     .background(
-                        Image("quadro")
+                        Image("frame")
                             .resizable()
                             .frame(width:geometryVStack.size.width, height:  geometryVStack.size.height )
                         

@@ -59,7 +59,7 @@ struct OnboardingOneView: View {
                         }
                     }
                     .background(
-                        Image("quadro")
+                        Image("frame")
                             .resizable()
                             .frame(width:geometryVStack.size.width, height:  geometryVStack.size.height )
                     )
