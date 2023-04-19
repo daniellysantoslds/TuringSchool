@@ -11,9 +11,8 @@ struct HomeScreenView: View {
     
     @State private var showModal = false
     
-    var fontR = UIFont()
-    var fontB = UIFont()
-    var fontM = UIFont()
+    var fontM32 = UIFont()
+    var fontMoBo = UIFont()
     
     
     var body: some View {
@@ -63,18 +62,17 @@ struct HomeScreenView: View {
     
     
     init() {
-        let cfURL = Bundle.main.url(forResource: "PixelOperator-Bold", withExtension: "ttf")! as CFURL
         
-        CTFontManagerRegisterFontsForURL(cfURL, CTFontManagerScope.process, nil)
-        let cfURL2 = Bundle.main.url(forResource: "PixelOperator", withExtension: "ttf")! as CFURL
         
-        CTFontManagerRegisterFontsForURL(cfURL2, CTFontManagerScope.process, nil)
         let cfURL3 = Bundle.main.url(forResource: "PixelOperatorMono8", withExtension: "ttf")! as CFURL
         CTFontManagerRegisterFontsForURL(cfURL3, CTFontManagerScope.process, nil)
         
-        fontR = UIFont(name: "PixelOperator-Bold", size:  180)!
-        fontB = UIFont(name: "PixelOperator", size:  80)!
-        fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
+        
+        let cfURL4 = Bundle.main.url(forResource: "PixelOperatorMonoHB8", withExtension: "ttf")! as CFURL
+        CTFontManagerRegisterFontsForURL(cfURL4, CTFontManagerScope.process, nil)
+     
+        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 24)!
+        fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 30)!
         
         
     }

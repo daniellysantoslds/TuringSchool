@@ -9,10 +9,6 @@ import SwiftUI
 
 struct PopUpView: View {
     
-    var fontR = UIFont()
-    var fontB = UIFont()
-    var fontM = UIFont()
-    var fontR28 = UIFont()
     var fontM32 = UIFont()
     var fontMoBo = UIFont()
     
@@ -86,7 +82,7 @@ struct PopUpView: View {
                             .frame(width:geometryVStack.size.width, height:  geometryVStack.size.height )
                         
                     )
-                    .frame(maxWidth: geometry.size.width * 0.95, maxHeight:  geometry.size.height * 0.90).position(x: geometry.size.width/2, y: geometry.size.height/2)
+                    .frame(maxWidth: geometry.size.width * 0.95, maxHeight:  geometry.size.height * 0.95).position(x: geometry.size.width/2, y: geometry.size.height/2)
                     
                 }
                 
@@ -142,23 +138,11 @@ struct PopUpView: View {
     }
     
     init() {
-        let cfURL = Bundle.main.url(forResource: "PixelOperator-Bold", withExtension: "ttf")! as CFURL
-        
-        CTFontManagerRegisterFontsForURL(cfURL, CTFontManagerScope.process, nil)
-        let cfURL2 = Bundle.main.url(forResource: "PixelOperator", withExtension: "ttf")! as CFURL
-        
-        CTFontManagerRegisterFontsForURL(cfURL2, CTFontManagerScope.process, nil)
-        let cfURL3 = Bundle.main.url(forResource: "PixelOperatorMono8", withExtension: "ttf")! as CFURL
-        CTFontManagerRegisterFontsForURL(cfURL3, CTFontManagerScope.process, nil)
         
         let cfURL4 = Bundle.main.url(forResource: "PixelOperatorMonoHB8", withExtension: "ttf")! as CFURL
         CTFontManagerRegisterFontsForURL(cfURL4, CTFontManagerScope.process, nil)
         
-        fontR = UIFont(name: "PixelOperator-Bold", size:  180)!
-        fontB = UIFont(name: "PixelOperator", size:  80)!
-        fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
-        fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
-        fontR28 = UIFont(name: "PixelOperator", size: 28)!
+       
         fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 18)!
         fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 20)!
         
