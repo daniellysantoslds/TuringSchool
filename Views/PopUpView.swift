@@ -104,10 +104,10 @@ struct PopUpView: View {
                                     
                                     
                                     HStack(spacing: 600) {
-                                        Button("Sair") {
+                                        Button("esc") {
                                             exibirPopup.toggle()
                                         } .font(Font(fontM32)).foregroundColor(Color("marron"))
-                                        Button("Próxima") {
+                                        Button("next") {
                                             
                                             if flowCurrentIndex < flow.count - 1 {
                                                 flowCurrentIndex += 1
