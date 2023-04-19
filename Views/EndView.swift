@@ -10,15 +10,15 @@ import SwiftUI
 struct EndView: View {
     
     @State private var showModal = false
- 
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
-              
+                
                 Button(action: {
                     showModal = true
                 }) {
-                    Image("restart-button")
+                    Image("27")
                 }
                 .frame(width: 100, height: 100)
                 .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
@@ -38,11 +38,11 @@ struct EndView: View {
                 .position(x: geometry.size.width / 2, y: geometry.size.height / 6)
                 
                 
-            }
+            }.background(Image("frame-straight").scaledToFill())
             
-        }
+        }.background(Image("frame-straight").scaledToFill())
         
-       
+        
     }
 }
 
