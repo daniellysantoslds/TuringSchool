@@ -98,7 +98,7 @@ struct OnboardingOneView: View {
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontR28 = UIFont(name: "PixelOperator", size: 28)!
-        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 20)!
+        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 24)!
         fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 30)!
         
         

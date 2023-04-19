@@ -21,10 +21,11 @@ struct PopUpView: View {
     @State private var showNavigation = false
     
     @State private var flow: [ElementContentModel] = [
-        ElementContentModel(image: "beginning-of-tape", popUpDescription: "Now we are on the second item, represented by the lowercase delta symbol (δ), this element indicates the initial state of the machine, which means that everything will start from that point. When the machine is activated, this is where the reading head is positioned. From then on, the machine starts executing the instructions present in its transition table to process the data stored on the tape."),
-        ElementContentModel(image: "Prohibited", popUpDescription: "In the third item, it is important to highlight that every program has a data input, which can be a sequence of characters, such as letters, numbers, codes or programs, which will be processed and calculated. This entry will be written to the tape itself by the user who wants to perform the computation. These input items are processed by the read head along the tape, and how the machine processes them depends on the rules contained in the transition table."),
+        ElementContentModel(image: "beginning-of-tape", popUpDescription: "In the first item, we have the control unit, which is also called the tape reading head. It is important to note that the tape is infinite. This unit is responsible for reading and writing symbols on the tape, as well as moving left or right. We can imagine that the read head works as if it were a person looking at each square on the tape, moving their attention left or right."),
+        ElementContentModel(image: "Prohibited", popUpDescription: "Now we are on the second item, represented by the lowercase delta symbol (δ), this element indicates the initial state of the machine, which means that everything will start from that point. When the machine is activated, this is where the reading head is positioned. From then on, the machine starts executing the instructions present in its transition table to process the data stored on the tape."),
+        ElementContentModel(image: "white", popUpDescription: "In the third item, it is important to highlight that every program has a data input, which can be a sequence of characters, such as letters, numbers, codes or programs, which will be processed and calculated. This entry will be written to the tape itself by the user who wants to perform the computation. These input items are processed by the read head along the tape, and how the machine processes them depends on the rules contained in the transition table."),
         ElementContentModel(image: "white", popUpDescription: "The fourth item and the last one we will cover is the white symbol, represented by the beta symbol. This symbol is used to indicate an empty space on the tape where no information is stored. It is used to signal that there is no more input information to be read and therefore the computation must be terminated."),
-        ElementContentModel(image: "beginning-of-tape", popUpDescription: "Now we are on the second item, represented by the lowercase delta symbol (δ), this element indicates the initial state of the machine, which means that everything will start from that point. When the machine is activated, this is where the reading head is positioned. From then on, the machine starts executing the instructions present in its transition table to process the data stored on the tape."),
+        
     ];
     
     // Controla nossa posicao no fluxo do jogo
@@ -48,11 +49,11 @@ struct PopUpView: View {
                             
                         }) {
                             Image("header").resizable().frame(width: 200, height: 200)
-                                //.scaleEffect(1.2)
+                            //.scaleEffect(1.2)
                                 .animation(
                                     Animation.spring(response: 0.8, dampingFraction: 0.8) // duração de 1,5 segundos
-                                                     // repete para sempre
-                                            )
+                                    // repete para sempre
+                                )
                         }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
                         Spacer().frame(height: 50)
                         HStack {
@@ -95,34 +96,32 @@ struct PopUpView: View {
                             .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.38)
                             .overlay(
                                 VStack {
-                                    Text("In the first item, we have the control unit, which is also called the tape reading head. It is important to note that the tape is infinite. This unit is responsible for reading and writing symbols on the tape, as well as moving left or right. We can imagine that the read head works as if it were a person looking at each square on the tape, moving their attention left or right.")
+                                    Text(flow[flowCurrentIndex].popUpDescription)
                                         .font(Font(fontMoBo))
                                         .padding()
                                         .foregroundColor(.black)
                                     
-                                
+                                    
                                     
                                     HStack(spacing: 600) {
                                         Button("Sair") {
                                             exibirPopup.toggle()
                                         } .font(Font(fontM32)).foregroundColor(Color("marron"))
                                         Button("Próxima") {
-                                          
+                                            
                                             if flowCurrentIndex < flow.count - 1 {
                                                 flowCurrentIndex += 1
                                             } else {
+                                                exibirPopup.toggle()
                                                 showNavigation.toggle()
                                             }
                                             
                                             exibirPopup.toggle()
                                         } .font(Font(fontM32)).foregroundColor(Color("marron")).padding()
                                             .fullScreenCover(isPresented:  $showNavigation) {
-                                                HomeScreenView()
+                                                EndView()
                                             }
                                     }
-                                    //.frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    //                                    .padding(.horizontal, 60)
-                                    //                                    .padding(.top, 40)
                                     
                                     
                                     
@@ -131,7 +130,7 @@ struct PopUpView: View {
                                 
                                 //.frame(width: (geometry.size.width * 0.8) * 0.88, height:(geometry.size.height * 0.60) * 0.9)
                             )
-                            //.frame(maxWidth: .infinity, maxHeight: .infinity)
+                        //.frame(maxWidth: .infinity, maxHeight: .infinity)
                         
                             .position(x: geometry.size.width/2, y: geometry.size.height/1.5)
                         
