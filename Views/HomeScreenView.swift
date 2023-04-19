@@ -12,6 +12,7 @@ struct HomeScreenView: View {
     @State private var showModal = false
     @State private var showButton = false
     @State private var opacity: Double = 0.0
+    @State private var rectanglePosition = CGPoint(x: 0, y: 0)
     
     
     
@@ -41,10 +42,14 @@ struct HomeScreenView: View {
                     
                    
                     
-                    GifView().frame(width: 100, height:100)
+                    GifView().offset(x: rectanglePosition.x, y: rectanglePosition.y)
+                        .animation(.linear(duration: 5))
+                        .onAppear {
+                            self.rectanglePosition = CGPoint(x: -800, y: 0)
+                        }
                         .alignmentGuide(.top) { d in d[.top] }
                         .alignmentGuide(.trailing) { d in d[.trailing] }
-                        .offset(x: geometry.size.width / 2.60,  y: -118)
+                        .offset(x: geometry.size.width / 2.60,  y: -158)
                     
                     
                 }

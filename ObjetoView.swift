@@ -12,13 +12,13 @@ struct ObjetoView: View {
     @State private var rectanglePosition = CGPoint(x: 0, y: 0)
 
     var body: some View {
-        Image("sky")
+        GifView()
             .frame(width: 50, height: 50)
             .foregroundColor(.blue)
             .offset(x: rectanglePosition.x, y: rectanglePosition.y)
-            .animation(.linear(duration: 2))
+            .animation(.linear(duration: 5))
             .onAppear {
-                self.rectanglePosition = CGPoint(x: UIScreen.main.bounds.width - 75, y: 0)
+                self.rectanglePosition = CGPoint(x: -75, y: 0)
             }
     }
 }
