@@ -41,7 +41,7 @@ struct OnboardingThreeView: View {
                                 
                             }) {
                                 Text("next")
-                                    .foregroundColor(.red)
+                                    .foregroundColor(Color("Yellow-0")).font(Font( fontM32))
                             }
                             .offset(y: geometry.size.width / 100 )
                             .fullScreenCover(isPresented: $showNavigation, content: {
@@ -99,7 +99,7 @@ struct OnboardingThreeView: View {
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontR28 = UIFont(name: "PixelOperator", size: 28)!
-        fontM32 = UIFont(name: "PixelOperatorMono8", size: 18)!
+        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 20)!
         fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 30)!
         
         
@@ -108,7 +108,7 @@ struct OnboardingThreeView: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct OnboardingThreeView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingThreeView()
     }

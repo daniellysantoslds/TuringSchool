@@ -34,7 +34,7 @@ struct AnimationText: View {
         }
     }
 
-struct OnboardingThreeView_Previews: PreviewProvider {
+struct AnimationText_Previews: PreviewProvider {
     static var previews: some View {
         AnimationText()
     }

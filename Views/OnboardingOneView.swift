@@ -40,7 +40,7 @@ struct OnboardingOneView: View {
                                 
                             }) {
                                 Text("next")
-                                    .foregroundColor(.red)
+                                    .foregroundColor(Color("Yellow-0")).font(Font( fontM32))
                             }
                             .offset(y: geometry.size.width / 100 )
                             .fullScreenCover(isPresented: $showNavigation, content: {
@@ -98,7 +98,7 @@ struct OnboardingOneView: View {
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontR28 = UIFont(name: "PixelOperator", size: 28)!
-        fontM32 = UIFont(name: "PixelOperatorMono8", size: 18)!
+        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 20)!
         fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 30)!
         
         
