@@ -32,7 +32,7 @@ struct EndView: View {
                         }) {
                             Image("restart-button")
                         }
-                        .position(x: geometry.size.width * 0.725 , y: geometry.size.height / 4)
+                        .position(x: geometry.size.width * 0.2 , y: geometry.size.height / 4)
                         .fullScreenCover(isPresented: $showModal) {
                             HomeScreenView()
                                 .transition(.move(edge: .top))
@@ -45,7 +45,7 @@ struct EndView: View {
                         }) {
                             Image("credits-button")
                         }
-                        .position(x: geometry.size.width - 950 , y: geometry.size.height / 4 )
+                        .position(x: geometry.size.width * 0.3, y: geometry.size.height / 4 )
                         
                     }
                     
