@@ -47,8 +47,8 @@ struct HomeScreenView: View {
                         .onAppear {
                             self.rectanglePosition = CGPoint(x: -800, y: 0)
                         }
-                        .alignmentGuide(.top) { d in d[.top] }
-                        .alignmentGuide(.trailing) { d in d[.trailing] }
+//                        .alignmentGuide(.top) { d in d[.top] }
+//                        .alignmentGuide(.trailing) { d in d[.trailing] }
                         .offset(x: geometry.size.width / 2.60,  y: -158)
                     
                     
@@ -118,5 +118,3 @@ struct HomeScreenView_Previews: PreviewProvider {
         HomeScreenView()
     }
 }
-
-
