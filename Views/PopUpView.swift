@@ -14,6 +14,7 @@ struct PopUpView: View {
     var fontM = UIFont()
     var fontR28 = UIFont()
     var fontM32 = UIFont()
+    var fontMoBo = UIFont()
     
     @State private var exibirPopup = false
     @Environment(\.presentationMode) var presentationMode
@@ -89,27 +90,26 @@ struct PopUpView: View {
                             .overlay(
                                 VStack {
                                     Text("In the first item, we have the control unit, which is also called the tape reading head. It is important to note that the tape is infinite. This unit is responsible for reading and writing symbols on the tape, as well as moving left or right. We can imagine that the read head works as if it were a person looking at each square on the tape, moving their attention left or right.")
-                                        .font(Font(fontR28))
-                                        //.lineLimit(7)
+                                        .font(Font(fontMoBo))
+                                        .padding()
                                         .foregroundColor(.black)
-                                    //}
-                                    //.frame(maxHeight: geometry.size.height * 0.200)
-                        
                                     
-                                    HStack(spacing: 400) {
+                                
+                                    
+                                    HStack(spacing: 600) {
                                         Button("Sair") {
                                             exibirPopup.toggle()
-                                        } .font(Font(fontM32))
+                                        } .font(Font(fontM32)).foregroundColor(Color("marron"))
                                         Button("Próxima") {
-                                            // Se currentIndex for menor que o tamanho da lista
+                                          
                                             if flowCurrentIndex < flow.count - 1 {
                                                 flowCurrentIndex += 1
                                             } else {
-                                                flowCurrentIndex = 0
+                                                showNavigation.toggle()
                                             }
                                             
                                             exibirPopup.toggle()
-                                        } .font(Font(fontM32))
+                                        } .font(Font(fontM32)).foregroundColor(Color("marron")).padding()
                                             .fullScreenCover(isPresented:  $showNavigation) {
                                                 HomeScreenView()
                                             }
@@ -121,7 +121,9 @@ struct PopUpView: View {
                                     
                                     
                                     
-                                }//.frame(width: (geometry.size.width * 0.8) * 0.88, height:(geometry.size.height * 0.60) * 0.9)
+                                }.padding(.vertical, 10)
+                                
+                                //.frame(width: (geometry.size.width * 0.8) * 0.88, height:(geometry.size.height * 0.60) * 0.9)
                             )
                             //.frame(maxWidth: .infinity, maxHeight: .infinity)
                         
@@ -144,13 +146,16 @@ struct PopUpView: View {
         let cfURL3 = Bundle.main.url(forResource: "PixelOperatorMono8", withExtension: "ttf")! as CFURL
         CTFontManagerRegisterFontsForURL(cfURL3, CTFontManagerScope.process, nil)
         
+        let cfURL4 = Bundle.main.url(forResource: "PixelOperatorMonoHB8", withExtension: "ttf")! as CFURL
+        CTFontManagerRegisterFontsForURL(cfURL4, CTFontManagerScope.process, nil)
+        
         fontR = UIFont(name: "PixelOperator-Bold", size:  180)!
         fontB = UIFont(name: "PixelOperator", size:  80)!
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontR28 = UIFont(name: "PixelOperator", size: 28)!
-        fontM32 = UIFont(name: "PixelOperatorMono8", size: 18)!
-        
+        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 22)!
+        fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 20)!
         
         
     }
