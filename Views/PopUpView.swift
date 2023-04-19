@@ -89,7 +89,7 @@ struct PopUpView: View {
                 if exibirPopup {
                     GeometryReader { geometry in
                         Color.white
-                            .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.38)
+                            .frame(width: geometry.size.width * 0.8, height:geometry.size.height * 0.50)
                             .overlay(
                                 VStack {
                                     Text(flow[flowCurrentIndex].popUpDescription)

@@ -64,9 +64,6 @@ struct HomeScreenView: View {
     init() {
         
         
-        let cfURL3 = Bundle.main.url(forResource: "PixelOperatorMono8", withExtension: "ttf")! as CFURL
-        CTFontManagerRegisterFontsForURL(cfURL3, CTFontManagerScope.process, nil)
-        
         
         let cfURL4 = Bundle.main.url(forResource: "PixelOperatorMonoHB8", withExtension: "ttf")! as CFURL
         CTFontManagerRegisterFontsForURL(cfURL4, CTFontManagerScope.process, nil)

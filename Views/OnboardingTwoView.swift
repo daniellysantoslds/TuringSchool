@@ -78,7 +78,7 @@ struct OnboardingTwoView: View {
     }
     
     init() {
-        let cfURL = Bundle.main.url(forResource: "PixelOperator-Bold", withExtension: "ttf")! as CFURL
+       
         
         let cfURL4 = Bundle.main.url(forResource: "PixelOperatorMonoHB8", withExtension: "ttf")! as CFURL
         CTFontManagerRegisterFontsForURL(cfURL4, CTFontManagerScope.process, nil)
