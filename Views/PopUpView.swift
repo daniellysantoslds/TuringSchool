@@ -47,7 +47,13 @@ struct PopUpView: View {
                             }
                             
                         }) {
-                            Image("header").resizable().frame(width: 200, height: 200)                        }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
+                            Image("header").resizable().frame(width: 200, height: 200)
+                                //.scaleEffect(1.2)
+                                .animation(
+                                    Animation.spring(response: 0.8, dampingFraction: 0.8) // duração de 1,5 segundos
+                                                     // repete para sempre
+                                            )
+                        }.opacity(flowCurrentIndex != 0 ? 0.5 : 1.0)
                         Spacer().frame(height: 50)
                         HStack {
                             ForEach(Array(flow.enumerated()), id: \.1.id) { index, element in
