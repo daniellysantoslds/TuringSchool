@@ -159,7 +159,7 @@ struct PopUpView: View {
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontM = UIFont(name: "PixelOperatorMono8", size: 80)!
         fontR28 = UIFont(name: "PixelOperator", size: 28)!
-        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 22)!
+        fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 18)!
         fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 20)!
         
         

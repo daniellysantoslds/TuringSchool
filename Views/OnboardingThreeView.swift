@@ -40,7 +40,7 @@ struct OnboardingThreeView: View {
                                 showNavigation.toggle()
                                 
                             }) {
-                                Text("next")
+                                Text("go to class!")
                                     .foregroundColor(Color("Yellow-0")).font(Font( fontM32))
                             }
                             .offset(y: geometry.size.width / 100 )
@@ -101,8 +101,6 @@ struct OnboardingThreeView: View {
         fontR28 = UIFont(name: "PixelOperator", size: 28)!
         fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 24)!
         fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 30)!
-        
-        
         
         
     }
