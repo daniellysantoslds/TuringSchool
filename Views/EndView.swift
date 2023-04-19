@@ -14,10 +14,7 @@ struct EndView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                
-                
-                
-                
+              
                 Button(action: {
                     showModal = true
                 }) {
@@ -25,6 +22,11 @@ struct EndView: View {
                 }
                 .frame(width: 100, height: 100)
                 .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                .fullScreenCover(isPresented: $showModal) {
+                    HomeScreenView()
+                        .transition(.move(edge: .top))
+                        .animation(.easeOut(duration: 0.10))
+                }
                 
                 
                 Button(action: {

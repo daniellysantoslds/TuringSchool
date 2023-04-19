@@ -46,12 +46,6 @@ struct HomeScreenView: View {
                 }
                 .frame(width: 100, height: 100)
                 .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-                
-                
-                
-                
-                
-                
                 .edgesIgnoringSafeArea(.all)
                 .fullScreenCover(isPresented: $showModal) {
                     OnboardingOneView()
