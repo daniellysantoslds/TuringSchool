@@ -12,7 +12,7 @@ struct ObjetoView: View {
     @State private var rectanglePosition = CGPoint(x: 0, y: 0)
 
     var body: some View {
-        Rectangle()
+        Image("sky")
             .frame(width: 50, height: 50)
             .foregroundColor(.blue)
             .offset(x: rectanglePosition.x, y: rectanglePosition.y)
