@@ -11,8 +11,13 @@ struct HomeScreenView: View {
     
     @State private var showModal = false
     
+    @State private var opacity: Double = 0.0
+    
+    
+    
     var fontM32 = UIFont()
     var fontMoBo = UIFont()
+    var fontMoBoTitle = UIFont()
     
     
     var body: some View {
@@ -20,6 +25,9 @@ struct HomeScreenView: View {
         GeometryReader { geometry in
             ZStack {
                 ZStack(alignment: .bottom) {
+                    
+                    
+                    
                     Image("floor")
                         .resizable()
                         .ignoresSafeArea()
@@ -37,7 +45,7 @@ struct HomeScreenView: View {
                     
                     
                 }
-                
+         
                 Button(action: {
                     showModal = true
                 }) {
@@ -52,6 +60,14 @@ struct HomeScreenView: View {
                         .animation(.easeOut(duration: 0.5))
                 }
                 
+                
+                Text("Turing School").font(Font(fontMoBoTitle)).foregroundColor(.white)
+                    .opacity(opacity)
+                    .animation(.easeInOut(duration: 0.9))
+                    .onAppear {
+                        self.opacity = 1.0
+                    }
+                    .position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.17)
             }
         }
         .background(Image("sky").resizable().scaledToFill())
@@ -70,6 +86,7 @@ struct HomeScreenView: View {
      
         fontM32 = UIFont(name: "PixelOperatorMonoHB8", size: 24)!
         fontMoBo = UIFont(name: "PixelOperatorMonoHB8", size: 30)!
+        fontMoBoTitle = UIFont(name: "PixelOperatorMonoHB8", size: 50)!
         
         
     }
