@@ -5,6 +5,9 @@
 //  Created by Danielly Santos Lopes da Silva on 10/04/23.
 //
 
+
+//I would like the application to run on iPads in landscape mode.
+
 import SwiftUI
 
 struct HomeScreenView: View {
@@ -45,12 +48,14 @@ struct HomeScreenView: View {
                     GifView().offset(x: rectanglePosition.x, y: rectanglePosition.y)
                         .animation(.linear(duration: 5))
                         .onAppear {
-                            self.rectanglePosition = CGPoint(x: -800, y: 0)
+                            self.rectanglePosition = CGPoint(x: -geometry.size.width / 1.5, y: 0)
                         }
-                        .alignmentGuide(.top) { d in d[.top] }
-//                        .alignmentGuide(.trailing) { d in d[.trailing] }
-                        .offset(x: geometry.size.width / 2.60,  y: -158)
-                    
+                        .alignmentGuide(.trailing) { d in d[.trailing] }
+                        .offset(x: geometry.size.width / 2.60,  y: -143)
+                       
+                        .onAppear{
+                            music(music: "sound")
+                        }
                     
                 }
                 
