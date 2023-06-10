@@ -61,6 +61,5 @@ MUSIC
 
 Organizacão de trabalho no <a href="https://ritzy-dress-b97.notion.site/Turing-School-WWDC23-Submitted-b042445d12bb424ea1859e7b4075199a?pvs=4" target="_blank" rel="external" >Notion</a>
 
-Como construi o projeto? Confira no <a href="https://ritzy-dress-b97.notion.site/Turing-School-WWDC23-Submitted-b042445d12bb424ea1859e7b4075199a?pvs=4" target="_blank" rel="external" >Youtube</a>
+Como construi o projeto? Confira no <a href="https://www.youtube.com/shorts/g2kbEW4O2Xg" target="_blank" rel="external" >Youtube</a>
 
- <a href="https://www.youtube.com/shorts/g2kbEW4O2Xg" rel="external">Medium</a>
