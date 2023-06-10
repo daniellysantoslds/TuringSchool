@@ -7,7 +7,6 @@ Para uma melhor visualizacão execute o projeto no dispositivo Ipad na posicão 
 <h2>Motivacão</h2>
 Tive a ideia de fazer um desafio baseado em Alan Turing depois de assistir ao filme "O Jogo da Imitação". Fiquei encantado e triste com a falta de reconhecimento e humilhação que Alan sofreu. O desafio de explorá-lo e, sem dúvida, foi a parte mais envolvente do projeto para mim.
 
-[![Vídeo de Demonstração](https://www.youtube.com/shorts/g2kbEW4O2Xg)](https://www.youtube.com/shorts/g2kbEW4O2Xg)
 
 
 <h2>Descrição</h2>
@@ -25,7 +24,7 @@ O desenvolvimento foi feito para IOS no ambiente Playground, e toda a implementa
 
 
 
-<h2>Creditos</h2>
+<h2>Créditos</h2>
 **PIXEL  ART:**
 
 **"All pixel arts present in this project, including scenarios, characters and elements, were created manually by me, Danielly Santos, using the PiskelApp:tool:****https://www.piskelapp.com/.”**
@@ -62,4 +61,6 @@ MUSIC
 
 Organizacão de trabalho no <a href="https://ritzy-dress-b97.notion.site/Turing-School-WWDC23-Submitted-b042445d12bb424ea1859e7b4075199a?pvs=4" target="_blank" rel="external" >Notion</a>
 
- <a href="https://medium.com/@danielly.santoslopesds/alfabeta-auxiliando-no-processo-de-alfabetiza%C3%A7%C3%A3o-c50900d7e257" target="_blank" rel="external">Medium</a>
+Como construi o projeto? Confira no <a href="https://ritzy-dress-b97.notion.site/Turing-School-WWDC23-Submitted-b042445d12bb424ea1859e7b4075199a?pvs=4" target="_blank" rel="external" >Youtube</a>
+
+ <a href="https://www.youtube.com/shorts/g2kbEW4O2Xg" rel="external">Medium</a>
