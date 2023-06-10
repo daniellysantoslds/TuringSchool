@@ -21,7 +21,7 @@ O desenvolvimento foi feito para IOS no ambiente Playground, e toda a implementa
 
 <h2>Visualização</h2>
 
-<img src="https://user-images.githubusercontent.com/102704880/180437033-cc924456-0c59-488b-9334-bc2e0a1583f4.gif" />
+<img src="https://user-images.githubusercontent.com/102704880/244887334-ca0da9bd-ca6b-4a06-a19f-612e4704cfdc.gif" />
 
 
 
