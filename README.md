@@ -7,6 +7,8 @@ Para uma melhor visualizacão execute o projeto no dispositivo Ipad na posicão 
 <h2>Motivacão</h2>
 Tive a ideia de fazer um desafio baseado em Alan Turing depois de assistir ao filme "O Jogo da Imitação". Fiquei encantado e triste com a falta de reconhecimento e humilhação que Alan sofreu. O desafio de explorá-lo e, sem dúvida, foi a parte mais envolvente do projeto para mim.
 
+[![Vídeo de Demonstração]([https://img.youtube.com/vi/SEU_ID_DO_VÍDEO/maxresdefault.jpg)](https://www.youtube.com/watch?v=SEU_ID_DO_VÍDEO](https://www.youtube.com/shorts/g2kbEW4O2Xg))
+
 
 <h2>Descrição</h2>
 Em uma experiência de apenas três minutos ilustrada em pixel art, você terá a oportunidade de explorar uma das invenções mais importantes da história da computação: a máquina de Turing. Criada pelo renomado cientista Alan Turing.
